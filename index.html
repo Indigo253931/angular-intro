@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css-only/css/bootstrap.css"></script>
+
+</head>
+<body ng-app="ngFun">
+{{ "hola!".toUpperCase() }}
+{{ ['s','w','e','e','t','n','e','s','s'].join('')}}
+<div ng-controller="PokemonController">
+	<h1>Trainer: {{trainer.name}}</h1>
+	<input ng-model="trainer.name" ng-value="ash"/>
+		<table class="table table-striped">
+			<tr>
+				<th>Ndex</th> <th>Name</th> <th>Type</th>
+				</tr>
+			<tr ng-repeat="poke in pokemon">
+				<td>{{ poke.Ndex }}</td>
+				<td>{{ poke.name }}</td>
+				<td>{{ poke.type }}</td>
+			</tr>
+		</table>
+		<pre>{{ pokemon | json }</pre>
+	 	<pre> {{ catchphrase.toUpperCase() }}</pre>
+	</div>
+</body>
+</html>
